@@ -17,6 +17,7 @@ body {
   width: 85%;
   max-width: 1200px;
   margin: 0 auto;
+  transition: all ms;
 }
 button{
   padding: 15px 17px;
@@ -29,6 +30,7 @@ button{
   color: $turqoise;
   cursor: pointer;
   transition: all 300ms;
+  margin-bottom: 30px;
   &:hover{
     color: $wit;
     border: 2px solid $wit;
@@ -44,9 +46,11 @@ main{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: all 300ms;
   nav{
     display: flex;
     align-items: center;
+    transition: all 300ms;
     ul{
       margin-left: auto;
       display: flex;
@@ -78,6 +82,7 @@ main{
   .slider{
     text-align: center;
     width: 60%;
+    transition: all 300ms;
     h1{
       font-family: $playfair;
       font-size: 3.2rem;
@@ -172,6 +177,7 @@ main{
     font-family: $playfair;
     margin-bottom: 65px;
     position: relative;
+    text-align: center;
     &::after{
       content: "";
       position: absolute;
@@ -188,11 +194,12 @@ main{
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
-    img{
-      width: 30%;
+    transition: all 300ms;
+    .biglogo{
+      width: 35%;
     }
     p{
-      width: 55%;
+      width: 50%;
       font-family: $roboto;
       font-size: 1.4rem;
       line-height: 2.2rem;
@@ -249,6 +256,7 @@ main{
         align-items: center;
         padding: 35px 10px;
         position: relative;
+        transition: all 300ms;
         span{
           font-size: 5.3rem;
           color: $turqoise;
@@ -260,6 +268,8 @@ main{
           font-weight: 900;
           text-transform: uppercase;
           color: $subtitle;
+          text-align: center;
+          line-height: 2rem;
         }
         p{
           font-family: $roboto;
@@ -277,6 +287,7 @@ main{
         background-color: $lightgray;
         right: 0;
         top: 0;
+        transition: all 300ms;
 
       }
       &::before{
@@ -287,6 +298,7 @@ main{
         background-color: $lightgray;
         left: 0;
         bottom: 0;
+        transition: all 300ms;
       }
       
     }
@@ -322,7 +334,7 @@ main{
     background-image: url('../images/trees2.jpg');
     background-size: cover;
     background-position: center;
-    height: 70%;
+   
     h2{
       color: $wit;
     }
@@ -393,3 +405,257 @@ footer{
   text-align: center;
 }
 
+@media screen and (max-width:1100px){
+  .container{
+    width: 90%;
+  }
+}
+
+@media screen and (max-width:1000px){
+  main .slider {
+    text-align: center;
+    width: 80%;
+}
+}
+
+@media screen and (max-width:850px){
+  .col{
+    @include make-col(2,0);
+    div{
+      width: 50%;
+    }
+       div:nth-child(3),:last-child{
+        a{
+          &::after{
+              width: 1px;
+              }
+
+        }
+      }
+      div:nth-child(2),:nth-child(4),:last-child{
+        a{
+          &::after{
+              width: 0px;
+              }
+
+        }
+      }
+      div:nth-child(4),:nth-child(5),:last-child{
+        a{
+          &::before{
+          
+            height: 1px;
+                
+          }
+
+        }
+      }
+      div:nth-child(5),:nth-child(6),:last-child{
+        a{
+          &::before{
+          
+            height: 0px;
+                
+          }
+
+        }
+      }
+  
+}
+.work{
+  > div.squares{
+    width: 100%;
+    @include make-col(4,0);
+    .square{
+      width: 25%;
+      
+      
+    }
+    
+}
+}
+
+
+@media screen and (max-width:750px){
+  .container {
+    width: 95%;
+}
+  
+  main nav {
+    flex-direction: column;
+    align-items: center;
+    .logo{
+      margin-bottom: 40px;
+    }
+    ul{
+      margin-left: 0;
+      margin-bottom: 70px;
+    }
+  }
+  main .slider-nav {
+    
+    margin-bottom: 30px;
+}
+.chapter div {
+  width: 90%;
+  
+}
+.col{
+  
+  div{
+    width: 100%;
+    a{
+      &::after{
+          width: 0px;
+          }
+      &::before{
+            height: 1px;
+            }
+
+    }
+  }
+
+  
+  }
+  .work{
+    > div.squares{
+      width: 100%;
+      @include make-col(3,0);
+      .square{
+        width: 33.33%;
+        
+        
+      }
+      
+  }
+  }
+}
+
+}
+
+@media screen and (max-width:550px){
+  .work{
+    > div.squares{
+      width: 100%;
+      @include make-col(2,0);
+      .square{
+        width: 49%;
+        
+        
+      }
+      
+  }
+  }
+  main nav {
+   
+    ul{
+      display: none;
+    }
+  }
+  .chapter{
+    > div{
+      flex-direction: column;
+      align-items: center;
+      .biglogo{
+        
+        width: 50%;
+      }
+      p{
+        width:100% ;
+      }
+    }
+  }
+.ourteam .team {
+  @include make-col(2,5);
+  .person{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid $wit;
+    padding-bottom: 23px;
+    img{
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 22px;
+    }
+    h5{
+      font-size: 1.4rem;
+      font-family: $roboto;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: $wit;
+      margin-bottom: 10px;
+    }
+    > p{
+      color: $wit;
+      text-transform: uppercase;
+      padding: 0;
+      width: 100%;
+      text-align: center;
+    }
+    
+  }
+}
+}
+
+
+@media screen and (max-width:450px){
+  .work{
+    > div.squares{
+      width: 100%;
+      @include make-col(1,0);
+      .square{
+        width: 100%;
+        
+        
+      }
+      
+  }
+  }
+  .ourteam .team {
+    @include make-col(2,5);
+    .person{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid $wit;
+      padding-bottom: 23px;
+      img{
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: 22px;
+      }
+      h5{
+        font-size: 1.4rem;
+        font-family: $roboto;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: $wit;
+        margin-bottom: 10px;
+      }
+      > p{
+        color: $wit;
+        text-transform: uppercase;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+      }
+      
+    }
+  }
+}
+
+@media screen and (max-width:375px){
+  main{
+    height: 85vh;
+    .slider-nav {
+    
+      margin-bottom: 80px;
+  }
+  } 
+
+}
